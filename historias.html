@@ -19,13 +19,75 @@
         </nav>
     </header>
     <main>
-        <section class="hero">
-            <h1>Histórias</h1>
-            <p>Leia as histórias disponíveis.</p>
+        <section class="hero stories-hero">
+            <div class="hero-content">
+                <h1>Histórias</h1>
+            </div>
+        </section>
+
+        <section class="stories-section">
+            <div class="stories-container" id="storiesContainer">
+                <!-- As histórias serão renderizadas aqui -->
+            </div>
         </section>
     </main>
     <footer>
         <p>© 2026 CaioCarmo. Talvez todos os direitos reservados</p>
     </footer>
+
+    <script>
+        const stories = [
+            {
+                title: 'O Demônio da paralisia do sono',
+                content: 'De repente eu "acordo" eu não entendo como eu sei quando tudo se torna um sonho, nas descubro. A paralisia que eu vou contar é basicamente eu acordando, indo ao banheiro e voltando pra cama. A paralisia do sono é uma coisa recorrente comigo, por algum motivo a minha paralisia é diferente, eu não acordo e fico paralisado olhando para um monstro sentado na minha cama, não, a minha paralisia é eu tentando acordar, tentando abrir os olhos de verdade, abrir os olhos abertos. É uma sensação muito estranha, parece como um ataque, não sei dizer bem como é, mas resumindo a respiração fica ofegante, eu começo a suar e sinto dores no corpo, tudo isso enquanto eu durmo. geralmente é fácil notar que é tudo um sonho e tentar acordar. eu acredito na teoria de que, a paralisia do sono é como um demônio entrando na sua mente enquanto você dorme, e ele se reinventou. Ele me faz perceber que é tudo um pesadelo para que eu possa "acordar", então com muito esforço eu "acordei" e estava me sentindo tonto, mal conseguia levantar da cama, juntando toda minha força eu consigo levantar da cama e ir ao banheiro, no banheiro eu acabei caindo na parede e me sentei no chão, com uma visão bem turva, estava tudo escuro, então eu consegui me erguer, me apoiar na pia e jogar água no meu rosto, era uma sensação EXTREMAMENTE REAL, eu podia sentir literalmente tudo, desde de a textura até o frescor da água gelada da noite. então a porta do banheiro se fechou e eu pude ouvir uns sons estranhos vindo da porta, algo como um talk-show. Foi nesse momento que eu me dei conta de que era tudo um sonho e me assustei de verdade, fiquei espantado, nada daquilo era real, e como em um filme de terror, uma pessoa apareceu do meu lado sentado no vaso sanitário e com a voz de um homem adulto, ele me diz: "Você é complicado de se enganar, mas hoje você não me escapa!". Minha respiração ficou muito ofegante, com a garganta seca. Então, muito tonto, eu "acordei" novamente então muito tonto eu tento me levantar da cama, eu caio dela e me levanto. E simplesmente eu coloco a mão na orelha e começo a gritar como se eu estivesse realmente em perigo, Notei que meu quarto era incrivelmente realista e bem detalhado, tanto em textura quanto em iluminação. Não parecia um sonho, durante o período em que eu "acordo" eu fiz um movimento muito brusco. que me fez finalmente acordar de verdade, eu me sentia tonto, com sede, cansado e muito suado, mas pelo menos era tudo real. Eu estava tão mentalmente perturbado e com a sanidade vazia que eu quase cheguei ao ponto de entrar no quarto dos meus pais só pra ver alguém, naquela noite silenciosa e escura, mas como dito antes, desta vez era tudo real.'
+            },
+            {
+                title: 'O VERDADEIRO SONHO DE AMOR!',
+                content: 'Tudo começa quando eu entrei no FBI, era meu primeiro dia. Chegando lá eu entrei em um veiculo cheio, lotado de computadores, servidores e pessoas, e foi lá que eu a vi, uma garota, de cabelos negros, olhos castanhos, meio magrinha, e uma pele parda de perder o folego. Devia ser o 3° ou 4° dia dela no FBI, uma novata assim como eu. Logo após, veio nossa primeira missão: "FAÇAM TUDO ISSO E AQUILO". Então fomos, saímos do veiculo e a garota acabou sendo levada por um riacho que havia ali perto, eu fui atrás dela e em uma curva conseguimos sair da correnteza pesada. Nós subimos o morro à nossa frente, lá em cima havia um canhão, eu coloquei flechas e ela bolas de chumbo, assim que atiramos tudo se tornou flechas negras que soltavam fogo, que sem querer acabaram por cair bem em cima de 2 edifícios, os dois eram do FBI, nós começamos a comemorar e rir fazendo nossas barrigas doerem. Então a cena corta para o apartamento da garota, então Tony Stark apareceu querendo falar algumas coisas importantes, mas eu não prestei muita atenção pois estava cantando na minha cabeça a música -"NEVER GONNA GIVE YOU UP"-. Então se passou um tempo... e nós fomos demitidos do FBI, eu abracei ela pois sabia que era O sonho dela desde criança. Foi o primeiro sonho em que eu senti HUMANIDADE, eu conseguia sentir a emoção dela, era triste, quente, angustiante. Olhamos pra baixo e encontramos um artefato no chão, brilhava como o sol. E a cena corta para o futuro onde todos usavam panos no corpo e pessoas mortas andavam, a garota e eu vivíamos com um grupo de pessoas, érámos os únicos vivos na cidade, entramos em um mercado, os mortos nos seguiam, estávamos indo para os fundos, o armazém do mercado. Atirando nos mortos e andando para trás de forma ÉPICA, parecia como nos filmes de Hollywood, a maioria das pessoas chegaram ao no armazém seguras, mas ainda estávamos encurralados pelos mortos e de forma épica eu dei um deslize na bancada do açougue atirando na cabeça em todos os mortos, corri em direção a garota que levava alguns dos sobreviventes para dentro e disse de forma ofegante: "HAHAHA quase morri" e fui para dentro do armazém conferir se estavam todos lá, com os nervos a flor da pele eu dei um empurrão na mulher com uma criança no colo dizendo meio tremulo: "com licença". A garota me segurou e me deu um puxão falando preocupada: "Oque houve? porque quer minha opinião?" então eu à abracei novamente. eu senti medo de tudo acabar naquela hora, acordei e perdi a única história de amor com sentimentos verdadeiros de felicidade, tristeza e afeto.'
+            }
+        ];
+
+        const storiesContainer = document.getElementById('storiesContainer');
+
+        function renderAllStories() {
+            storiesContainer.innerHTML = '';
+            stories.forEach((story, index) => {
+                const storyCard = document.createElement('article');
+                storyCard.className = 'story-card';
+                storyCard.setAttribute('tabindex', '0');
+                storyCard.setAttribute('role', 'button');
+                
+                storyCard.innerHTML = `
+                    <button type="button" class="story-close">×</button>
+                    <div class="story-card-inner">
+                        <h2>${story.title}</h2>
+                        <div class="story-text"><p>${story.content}</p></div>
+                    </div>
+                `;
+
+                const closeBtn = storyCard.querySelector('.story-close');
+                
+                storyCard.addEventListener('click', function () {
+                    storyCard.classList.add('expanded');
+                });
+                
+                storyCard.addEventListener('keydown', function (event) {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        storyCard.classList.add('expanded');
+                    }
+                });
+                
+                closeBtn.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    storyCard.classList.remove('expanded');
+                });
+                
+                storiesContainer.appendChild(storyCard);
+            });
+        }
+
+        renderAllStories();
+    </script>
 </body>
 </html>

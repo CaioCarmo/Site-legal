@@ -7,6 +7,9 @@ function redirectToPage() {
 }
 
 function updateParallax() {
+    // Desabilitar parallax em dispositivos móveis
+    if (window.innerWidth <= 768) return;
+
     const sections = Array.from(document.querySelectorAll('.parallax-section'));
     const viewportHeight = window.innerHeight;
     const speed = 0.22;
