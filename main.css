@@ -110,7 +110,7 @@ nav ul li a.active::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('./imagens/mundo.jpeg');
+    background-image: url('./figs/mundo.jpeg');
     background-size: cover;
     background-position: center;
     filter: blur(4px) brightness(0.45);
@@ -140,7 +140,7 @@ nav ul li a.active::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('./imagens/desenho.jpeg');
+    background-image: url('./figs/desenho.jpeg');
     background-size: cover;
     background-position: center;
     filter: blur(4px) brightness(0.45);
@@ -170,7 +170,7 @@ nav ul li a.active::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('./imagens/sonhos.jpeg');
+    background-image: url('./figs/sonhos.jpeg');
     background-size: cover;
     background-position: center;
     filter: blur(4px) brightness(0.45);
