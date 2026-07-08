@@ -1,9 +1,13 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     background-color: #111;
+    overflow-x: hidden;
 }
 
 header {
@@ -522,19 +526,31 @@ footer {
         max-width: 100%;
     }
 
-    /* Parallax desabilitado em mobile */
+    /* Parallax desabilitado em mobile, mas manter imagem de fundo */
     .parallax-section .background-layer {
-        display: none;
+        display: block;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
     }
 
     .parallax-section::after {
-        display: none;
+        display: block;
     }
 
     .minecraft-section,
     .artes-section,
     .sonhos-section {
-        background-color: rgba(15, 15, 15, 0.8);
+        background-color: rgba(15, 15, 15, 0.65);
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .parallax-section .background-layer {
+        transform: none;
     }
 
     /* Stories Preview */
